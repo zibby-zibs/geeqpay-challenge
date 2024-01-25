@@ -35,7 +35,7 @@ function App() {
         {loading ? (
           <Loader />
         ) : (
-          <section className="flex gap-5 min-w-[calc(100vw-80px)] mt-9 px-5">
+          <section className="xl:flex gap-5 min-w-[calc(100vw-80px)] mt-9 px-5">
             <aside className="basis-[60%]">
               <div className="">
                 <ChartCard />

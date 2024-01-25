@@ -10,7 +10,7 @@ const TotalRefund = () => {
   ];
 
   return (
-    <main className="bg-white rounded-[14px] p-4 flex flex-col gap-[8px] border border">
+    <main className="bg-white rounded-[14px] p-4 flex flex-col gap-[8px] border border-border">
       <div className="flex items-center justify-between">
         <figure className="p-2 rounded-full border border-border">
           <img src="/3d-rotate.svg" alt="" className="w-6 h-6 object-contain" />
