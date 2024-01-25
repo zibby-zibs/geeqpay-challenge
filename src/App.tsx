@@ -25,7 +25,7 @@ function App() {
   }, []);
   return (
     <main className="relative flex w-full !max-w-[100vw] h-full font-jakarta scrollbar-none overflow-x-hidden">
-      <div className="sticky top-0 left-0">
+      <div className="sticky top-0 left-0 hidden xl:block">
         <Sidebar />
       </div>
       <div>
