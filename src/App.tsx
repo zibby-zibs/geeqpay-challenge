@@ -24,7 +24,7 @@ function App() {
     return () => clearTimeout(timeout);
   }, []);
   return (
-    <main className="relative flex w-full !max-w-[100vw] h-full font-jakarta scrollbar-none ">
+    <main className="relative flex w-full !max-w-[100vw] h-full font-jakarta scrollbar-none overflow-x-hidden">
       <div className="sticky top-0 left-0 hidden xl:block">
         <Sidebar />
       </div>

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { platforms } from "../../../data/platforms";
 import { cn } from "../../lib/utils";
 
 const Platform = () => {
   const [colors, setColors] = useState<string[]>([]);
+
   function generateRandomBrightColors() {
     const colors: string[] = [];
 
@@ -19,6 +20,7 @@ const Platform = () => {
   useEffect(() => {
     generateRandomBrightColors();
   }, []);
+
   return (
     <main className="w-full bg-white p-4 rounded-[14px] border border-border">
       <h1 className="text-[18px] font-medium">Top Platform</h1>
@@ -29,7 +31,7 @@ const Platform = () => {
               <h1 className="font-semibold text-[18px]">{platform.name}</h1>
               <div className="relative w-full bg-gray-200 rounded-full h-4">
                 <div
-                  className="rounded-full"
+                  className="rounded-full transition-all duration-1000 ease-in-out"
                   style={{
                     backgroundColor: colors[index],
                     width: `${(platform.amount / 10000000) * 100}%`,

@@ -10,7 +10,7 @@ import Sidebar from "../Sidebar";
 const Header = () => {
   const date = new Date();
   return (
-    <main className="w-screen  xl:w-[clac(100vw-80px)] px-5 py-[18px] border-b border-border flex items-center justify-between">
+    <main className="w-screen  xl:w-full px-5 py-[18px] border-b border-border flex items-center justify-between">
       <h1 className="text-[18px]">Dashboard</h1>
       <aside className="flex items-center gap-5">
         <div className="max-w-[21.8125rem] hidden xl:block">
@@ -44,7 +44,7 @@ const Header = () => {
             <p className="text-gray-400 text-sm">{user?.email}</p>
           </article>
         </div>
-        <div>
+        <div className="xl:hidden">
           <Sheet>
             <SheetTrigger>
               <IoMenuOutline size={24} />
