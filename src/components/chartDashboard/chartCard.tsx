@@ -5,7 +5,6 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
   ResponsiveContainer,
   LabelList,
 } from "recharts";
@@ -38,7 +37,7 @@ const ChartCard = () => {
   return (
     <main className="w-full  border border-border rounded-[0.875rem] bg-white h-[23.375rem] p-5 max-w-full overflow-x-auto overflow-y-hidden scrollbar-none">
       <article className="flex items-center w-full justify-between">
-        <h1 className="text-[18px]">Sales Trends</h1>
+        <h1 className="text-[18px] font-semibold">Sales Trends</h1>
         <div className="flex gap-2 items-center">
           <p>Sort by:</p>
           <select

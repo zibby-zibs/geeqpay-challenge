@@ -35,7 +35,9 @@ const TotalOrder = () => {
       </div>
       <div>
         <h1 className="text-[18px] text-gray-400">Total Orders</h1>
-        <p className="text-[24px] font-semibold">486</p>
+        <p className="text-[24px] font-semibold">
+          {ordersOverTime.reduce((total, data) => total + data.orders, 0)}
+        </p>
       </div>
       <div className="text-sm text-[#606060] flex items-center gap-1 whitespace-break-spaces">
         <div className="text-[#34CAA5] bg-[#34CAA5]/10 px-2 py-1 rounded-full flex items-center gap-1 w-fit">

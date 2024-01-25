@@ -5,6 +5,7 @@ import { FaRegBell } from "react-icons/fa6";
 import { user } from "../../../data/user";
 import { IoMenuOutline } from "react-icons/io5";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
+import { CiSearch } from "react-icons/ci";
 import Sidebar from "../Sidebar";
 
 const Header = () => {
@@ -13,11 +14,14 @@ const Header = () => {
     <main className="w-screen  xl:w-full px-5 py-[18px] border-b border-border flex items-center justify-between">
       <h1 className="text-[18px]">Dashboard</h1>
       <aside className="flex items-center gap-5">
-        <div className="max-w-[21.8125rem] hidden xl:block">
+        <div className="relative max-w-[21.8125rem] hidden xl:block p-2  border border-border rounded-full bg-white">
+          <div className="absolute left-1 top-0 bottom-0 h-fit my-auto w-fit text-gray-300">
+            <CiSearch size={20} />
+          </div>
           <input
             type="text"
             placeholder="Search..."
-            className="outline-none border border-border p-2 rounded-full"
+            className="outline-none border-none pl-5 bg-transparent"
           />
         </div>
         <div className="items-center gap-3 hidden xl:flex">

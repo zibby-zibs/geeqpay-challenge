@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { platforms } from "../../../data/platforms";
-import { cn } from "../../lib/utils";
 
 const Platform = () => {
   const [colors, setColors] = useState<string[]>([]);
@@ -23,7 +22,7 @@ const Platform = () => {
 
   return (
     <main className="w-full bg-white p-4 rounded-[14px] border border-border">
-      <h1 className="text-[18px] font-medium">Top Platform</h1>
+      <h1 className="text-[18px] font-semibold">Top Platform</h1>
       <div className="mt-5 max-h-[350px] overflow-y-auto scrollbar-thin">
         {platforms.map((platform, index) => {
           return (

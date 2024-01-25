@@ -1,6 +1,6 @@
 import React from "react";
 import { averageSalesOverTime } from "../../../data/time-series";
-import { Area, ComposedChart, Line, XAxis } from "recharts";
+import { ComposedChart, Line, XAxis } from "recharts";
 import { FaArrowTrendUp } from "react-icons/fa6";
 
 const AverageSales = () => {
@@ -59,7 +59,12 @@ const AverageSales = () => {
       </div>
       <div>
         <h1 className="text-[18px] text-gray-400">Average Sales</h1>
-        <p className="text-[24px] font-semibold">486</p>
+        <p className="text-[24px] font-semibold">
+          {averageSalesOverTime.reduce(
+            (total, data) => total + data.averageSales,
+            0
+          )}
+        </p>
       </div>
       <div className="text-sm text-[#606060] flex items-center gap-1 whitespace-break-spaces">
         <div className="text-[#34CAA5] bg-[#34CAA5]/10 px-2 py-1 rounded-full flex items-center gap-1 w-fit">

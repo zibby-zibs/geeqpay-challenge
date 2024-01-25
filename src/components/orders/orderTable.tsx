@@ -17,8 +17,8 @@ const OrderTable = () => {
   return (
     <main className="w-full overflow-hidden  border border-border rounded-[0.875rem] bg-white h-[23.375rem] max-h-[23.375rem overflow-y-aut p-5">
       <div className="flex items-center justify-between w-full">
-        <h1 className="text-[18px]">Orders</h1>
-        <p>See All</p>
+        <h1 className="text-[18px] font-semibold">Orders</h1>
+        <p className="text-[#34CAA5]">See All</p>
       </div>
       <Table className="h-full !max-h-[calc(300px)] overflow-y-auto">
         <TableHeader className="sticky top-0">

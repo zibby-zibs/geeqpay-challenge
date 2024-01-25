@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Order } from "../../../data/orders";
 import dayjs from "dayjs";
 import { MdOutlineFileDownload } from "react-icons/md";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 type Props = {
   order: Order;
 };
 const Invoice = ({ order }: Props) => {
+  const invoiceRef = useRef<HTMLDivElement>(null);
+
   function generateRandomNumber(): string {
     const alphanumeric =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -26,13 +30,29 @@ const Invoice = ({ order }: Props) => {
     }
     return result;
   }
+
+  const downloadPdf = () => {
+    const input = invoiceRef.current;
+    if (input) {
+      html2canvas(input, { scale: 3 }).then((canvas) => {
+        const imgData = canvas.toDataURL("image/png");
+        const pdf = new jsPDF("p", "mm", "a4"); // A4 size page of PDF
+        const imgProps = pdf.getImageProperties(imgData);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+        pdf.save("invoice.pdf");
+      });
+    }
+  };
+
   return (
-    <main className="flex gap-3 py-11">
+    <main className="flex gap-3 py-11" ref={invoiceRef}>
       <figure className="flex flex-col gap-5 items-center border-r border-border px-3">
         <img src="/logo.svg" alt="" className="w-8 h-8 object-contain" />
-        <div>
+        <button onClick={downloadPdf}>
           <MdOutlineFileDownload size={24} />
-        </div>
+        </button>
       </figure>
       <aside className="px-3 pr-6">
         <section>
@@ -42,7 +62,7 @@ const Invoice = ({ order }: Props) => {
             ) : (
               <h1>Thank you for your purchase!</h1>
             )}
-            <hr className="bg-primary w-[260px] h-[2px] mx-auto rounded-full" />
+            <hr className="bg-primary w-[260px] h-[2px] mx-auto rounded-full mt-2" />
           </article>
           <div className="max-w-[300px] mx-auto bg-primary-foreground rounded-md p-3 mt-5 flex flex-col gap-4">
             <div className="flex justify-between w-full text-sm">
