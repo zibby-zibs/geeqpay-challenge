@@ -13,7 +13,7 @@ const TotalIncome = () => {
     <main className="bg-white rounded-[14px] p-4 flex flex-col gap-[8px] border border-border">
       <div className="flex items-center justify-between">
         <figure className="p-2 rounded-full border border-border">
-          <img src="/3d-rotate.svg" alt="" className="w-6 h-6 object-contain" />
+          <img src="/coin.svg" alt="" className="w-6 h-6 object-contain" />
         </figure>
 
         <ComposedChart width={104} height={32} data={totalIncomeOverTime}>

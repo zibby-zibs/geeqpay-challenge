@@ -45,12 +45,12 @@ const TotalRefund = () => {
             dot={false}
           />
 
-          <Area
+          {/* <Area
             type="monotone"
             dataKey="refunds"
             stroke="#ED544E"
             fill="url(#colorUv)"
-          />
+          /> */}
         </ComposedChart>
       </div>
       <div>
