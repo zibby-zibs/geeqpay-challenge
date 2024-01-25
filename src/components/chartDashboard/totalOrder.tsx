@@ -5,7 +5,7 @@ import { FaArrowTrendUp } from "react-icons/fa6";
 
 const TotalOrder = () => {
   return (
-    <main className="bg-white rounded-md p-4 flex flex-col gap-[10px]">
+    <main className="bg-white rounded-[14px] p-4 flex flex-col gap-[8px] border border-border">
       <div className="flex items-center justify-between">
         <figure className="p-2 rounded-full border border-border">
           <img src="/box-tick.png" alt="" className="w-6 h-6 object-contain" />
@@ -33,16 +33,16 @@ const TotalOrder = () => {
           />
         </ComposedChart>
       </div>
-      <div className="space-y-[5px]">
+      <div>
         <h1 className="text-[18px] text-gray-400">Total Orders</h1>
         <p className="text-[24px] font-semibold">486</p>
       </div>
       <div className="text-sm text-[#606060] flex items-center gap-1 whitespace-break-spaces">
-        <div className="text-[#34CAA5] bg-[#34CAA5]/10 p-2 rounded-full flex items-center gap-1 w-fit">
+        <div className="text-[#34CAA5] bg-[#34CAA5]/10 px-2 py-1 rounded-full flex items-center gap-1 w-fit">
           <div className="">
             <FaArrowTrendUp size={12} />
           </div>
-          <p>23.5%</p>
+          <p className="text-[12px]">23.5%</p>
         </div>{" "}
         <p>VS. previous month</p>
       </div>

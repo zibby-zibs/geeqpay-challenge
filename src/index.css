@@ -85,3 +85,58 @@
   gap: 20px;
   height: 100vh;
 }
+
+@keyframes skeleton-loader {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+.skeleton-loader {
+  animation: animateBg 2s ease-in-out infinite;
+  background: rgba(130, 130, 130, 0.2);
+  background: linear-gradient(
+    to right,
+    rgba(130, 130, 130, 0.2) 8%,
+    rgba(130, 130, 130, 0.3) 18%,
+    rgba(130, 130, 130, 0.2) 33%
+  );
+  background-size: 800px 100px;
+
+  background-size: 300% 100%;
+}
+
+@keyframes animateBg {
+  0% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: -100% 0%;
+  }
+}
+
+.animate-logo {
+  animation: logoAnimate 2s ease-in-out infinite;
+  translate: rotate(360deg);
+  transition: all 0.5s ease-in-out;
+}
+
+@keyframes logoAnimate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .skeleton-loader {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loader 1s ease-in-out infinite;
+} */
