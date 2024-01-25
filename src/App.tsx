@@ -24,7 +24,7 @@ function App() {
     return () => clearTimeout(timeout);
   }, []);
   return (
-    <main className="relative flex w-full !max-w-[100vw] h-full font-jakarta scrollbar-none overflow-y-hidden">
+    <main className="relative flex w-full !max-w-[100vw] h-full font-jakarta scrollbar-none overflow-x-hidden">
       <div className="sticky top-0 left-0">
         <Sidebar />
       </div>
@@ -35,7 +35,7 @@ function App() {
         {loading ? (
           <Loader />
         ) : (
-          <section className="xl:flex gap-5 min-w-[calc(100vw-80px)] mt-9 px-5">
+          <section className="flex flex-col xl:flex-row gap-5 min-w-[calc(100vw-80px)] mt-9 px-5">
             <aside className="basis-[60%]">
               <div className="">
                 <ChartCard />
