@@ -35,7 +35,7 @@ const Header = () => {
             <FaRegBell size={20} />
           </div>
         </div>
-        <div className="flex gap-2 items-center border-border p-2 rounded-full">
+        <div className="flex gap-2 items-center border border-border p-2 rounded-full">
           <figure>
             <img
               src={user?.avatarUrl}

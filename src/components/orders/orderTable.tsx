@@ -7,7 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-import { orders } from "../../../data/orders";
+import { Order, orders } from "../../../data/orders";
 import { cn } from "../../lib/utils";
 import dayjs from "dayjs";
 import { Dialog, DialogTrigger, DialogContent } from "../ui/dialog";
@@ -53,7 +53,7 @@ const OrderTable = () => {
                 <Dialog>
                   <DialogTrigger>{order?.status}</DialogTrigger>
                   <DialogContent className="w-fit p-0">
-                    <Invoice order={order} />
+                    <Invoice order={order as Order} />
                   </DialogContent>
                 </Dialog>
               </TableCell>
