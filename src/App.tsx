@@ -35,8 +35,8 @@ function App() {
         {loading ? (
           <Loader />
         ) : (
-          <section className="flex flex-col gap-5 w-[calc(100vw-10px)] xl:max-w-[calc(100vw-80px)] mt-9 px-1 lg:px-5 ">
-            <aside className="flex gap-4">
+          <section className="flex flex-col gap-5 w-[calc(100vw-10px)] xl:max-w-[calc(100vw-80px)] mt-9 px-3 lg:px-5 ">
+            <aside className="flex gap-4 flex-col xl:flex-row">
               <div className="flex-[0.6]">
                 <ChartCard />
               </div>
@@ -53,11 +53,11 @@ function App() {
                 </aside>
               </div>
             </aside>
-            <div className="flex">
-              <div className="mt-5">
+            <div className="flex gap-4 flex-col xl:flex-row">
+              <div className="mt-5 flex-[0.6]">
                 <OrderTable />
               </div>
-              <aside className="mt-5">
+              <aside className="mt-5 flex-[0.4]">
                 <Platform />
               </aside>
             </div>

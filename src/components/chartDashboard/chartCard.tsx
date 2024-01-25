@@ -36,7 +36,7 @@ const ChartCard = () => {
     }
   };
   return (
-    <main className="w-full  border border-border rounded-[0.875rem] bg-white h-[23.375rem] p-5 max-w-full overflow-x-auto scrollbar-none">
+    <main className="w-full  border border-border rounded-[0.875rem] bg-white h-[23.375rem] p-5 max-w-full overflow-x-auto overflow-y-hidden scrollbar-none">
       <article className="flex items-center w-full justify-between">
         <h1 className="text-[18px]">Sales Trends</h1>
         <div className="flex gap-2 items-center">
@@ -55,7 +55,7 @@ const ChartCard = () => {
       <ResponsiveContainer
         height="90%"
         // width={}
-        className={cn("!w-[600px] lg:!w-full ")}
+        className={cn("!w-[600px] md:!w-full ")}
       >
         <BarChart
           data={data}
@@ -78,9 +78,10 @@ const ChartCard = () => {
             tickFormatter={(tickItem) =>
               `${weekly ? tickItem : dayjs(tickItem, "YYYY-MM").format("MMM")}`
             }
-            tick={{ fontSize: 12 }}
+            // tick={{ fontSize: 12 }}
+            className="text-[10px] lg:text-[12px]"
           />
-          <YAxis tick={{ fontSize: 12 }} />
+          <YAxis className="text-[10px] lg:text-[12px]" />
           <Tooltip cursor={false} contentStyle={{ fontSize: 13 }} />
 
           <Bar
