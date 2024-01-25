@@ -10,11 +10,6 @@
     "cssVariables": true,
     "prefix": ""
   },
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./src*"]
-    }
-  },
   "aliases": {
     "components": "@/components",
     "utils": "@/lib/utils"

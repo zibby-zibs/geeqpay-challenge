@@ -2,20 +2,41 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import Sidebar from "./components/Sidebar";
-import { ChartCard } from "./components/chartDashboard";
+import {
+  ChartCard,
+  TotalOrder,
+  TotalRefund,
+} from "./components/chartDashboard";
+import Header from "./components/header/Header";
+import { OrderTable } from "./components/orders";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <main className="flex w-full h-full font-jakarta">
-      <Sidebar />
-      <section className="grid grid-cols-3 gap-4 w-full mt-9 mx-5">
-        <aside className="col-span-2 w-full">
-          <ChartCard />
-        </aside>
-        <div className="col-span-1 w-full">Next block</div>
-      </section>
+    <main className="flex w-full !max-w-[100%] h-full font-jakarta scrollbar-none ">
+      <div>
+        <Sidebar />
+      </div>
+      <div>
+        <header className="w-[calc(100vw-80px)]">
+          <Header />
+        </header>
+        <section className="grid-container min-w-[calc(100vw-80px)] mt-9">
+          <aside className="">
+            <div className="">
+              <ChartCard />
+            </div>
+            <div className="mt-5">
+              <OrderTable />
+            </div>
+          </aside>
+          <div className="">
+            <aside className="flex gap-2 w-full ">
+              <TotalOrder />
+              <TotalRefund />
+            </aside>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }

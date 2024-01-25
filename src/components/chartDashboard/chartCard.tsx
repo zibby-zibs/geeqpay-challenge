@@ -4,36 +4,54 @@ import {
   Bar,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   Legend,
   ResponsiveContainer,
+  LabelList,
 } from "recharts";
 import { monthlySales } from "../../../data/monthly-sales";
+import { weeklySales } from "../../../data/weekly-sales";
 import dayjs from "dayjs";
 
-const CustomTooltip = ({ active, payload, label, coordinate }: any) => {
-  if (active && payload && payload.length) {
-    return (
-      <div
-        className="custom-tooltip"
-        style={{ left: `${coordinate.x}px`, top: `${coordinate.y}px` }}
-      >
-        <p className="label">{`${label} : ${payload[0].value}`}</p>
-        <div className="arrow" />
-      </div>
-    );
-  }
-
-  return null;
-};
-
+interface Sales {
+  id: number;
+  week?: string;
+  month?: string;
+  totalSales: number;
+}
 const ChartCard = () => {
-  const [data, setData] = useState(monthlySales);
+  const [data, setData] = useState<Sales[]>(monthlySales);
+  const [weekly, setWeekly] = useState(false);
+
+  const handleOrderTime = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+
+    if (value === "weekly") {
+      setData(weeklySales);
+      setWeekly(true);
+    } else if (value === "monthly") {
+      setData(monthlySales);
+      setWeekly(false);
+    }
+  };
   return (
-    <main className="w-full border border-border rounded-[0.875rem] bg-white h-[23.375rem] p-5">
-      <h1 className="text-[18px]">Sales Trends</h1>
-      <ResponsiveContainer width="100%" height="100%">
+    <main className="w-full  border border-border rounded-[0.875rem] bg-white h-[23.375rem] p-5">
+      <article className="flex items-center w-full justify-between">
+        <h1 className="text-[18px]">Sales Trends</h1>
+        <div className="flex gap-2 items-center">
+          <p>Sort by:</p>
+          <select
+            name=""
+            id=""
+            className="p-3 rounded-full border border-border focus:outline-none"
+            onChange={handleOrderTime}
+          >
+            <option value="monthly">Monthly</option>
+            <option value="weekly">Weekly</option>
+          </select>
+        </div>
+      </article>
+      <ResponsiveContainer width="100%" height="90%">
         <BarChart
           data={data}
           barGap={10}
@@ -52,20 +70,23 @@ const ChartCard = () => {
             </linearGradient>
           </defs>
           <XAxis
-            dataKey="month"
+            dataKey={`${weekly ? "week" : "month"}`}
             tickFormatter={(tickItem) =>
-              dayjs(tickItem, "YYYY-MM").format("MMM")
+              `${weekly ? tickItem : dayjs(tickItem, "YYYY-MM").format("MMM")}`
             }
+            tick={{ fontSize: 12 }}
           />
-          <YAxis />
-          <Tooltip cursor={false} />
-          <Legend />
+          <YAxis tick={{ fontSize: 12 }} />
+          <Tooltip cursor={false} contentStyle={{ fontSize: 13 }} />
+
           <Bar
+            activeBar={{ fill: "#34CAA5" }}
             dataKey="totalSales"
             fill="url(#colorUv)"
-            className="text-primary"
+            className="text-primary text-sm"
             radius={[50, 50, 0, 0]}
           />
+          <LabelList dataKey="totalSales" position="top" />
         </BarChart>
       </ResponsiveContainer>
     </main>
