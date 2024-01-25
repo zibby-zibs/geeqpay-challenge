@@ -11,7 +11,7 @@ import Sidebar from "../Sidebar";
 const Header = () => {
   const date = new Date();
   return (
-    <main className="w-screen  xl:w-full px-5 py-[18px] border-b border-border flex items-center justify-between">
+    <main className="w-full px-5 py-[18px] border-b border-border flex items-center justify-between">
       <h1 className="text-[18px]">Dashboard</h1>
       <aside className="flex items-center gap-5">
         <div className="relative max-w-[21.8125rem] hidden xl:block p-2  border border-border rounded-full bg-white">

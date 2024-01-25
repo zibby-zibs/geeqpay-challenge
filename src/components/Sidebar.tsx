@@ -8,7 +8,7 @@ const Sidebar = ({ isMobile }: Props) => {
   return (
     <main
       className={cn(
-        "z-20 w-20 h-[100dvh] py-5 px-[0.625rem] flex gap-8 flex-col items-center ",
+        "sticky top-5 z-20 w-20 h-[100dvh] py-5 px-[0.625rem] flex gap-8 flex-col items-center ",
         isMobile ? "" : "bg-primary-foreground border-r border-border"
       )}
     >
