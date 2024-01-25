@@ -12,6 +12,7 @@ import {
 import { monthlySales } from "../../../data/monthly-sales";
 import { weeklySales } from "../../../data/weekly-sales";
 import dayjs from "dayjs";
+import { cn } from "../../lib/utils";
 
 interface Sales {
   id: number;
@@ -35,7 +36,7 @@ const ChartCard = () => {
     }
   };
   return (
-    <main className="w-full  border border-border rounded-[0.875rem] bg-white h-[23.375rem] p-5">
+    <main className="w-full  border border-border rounded-[0.875rem] bg-white h-[23.375rem] p-5 max-w-full overflow-x-auto scrollbar-none">
       <article className="flex items-center w-full justify-between">
         <h1 className="text-[18px]">Sales Trends</h1>
         <div className="flex gap-2 items-center">
@@ -51,15 +52,18 @@ const ChartCard = () => {
           </select>
         </div>
       </article>
-      <ResponsiveContainer width="100%" height="90%">
+      <ResponsiveContainer
+        height="90%"
+        // width={}
+        className={cn("!w-[600px] lg:!w-full ")}
+      >
         <BarChart
           data={data}
           barGap={10}
           barSize={20}
           margin={{
             top: 5,
-            right: 30,
-            left: 20,
+
             bottom: 5,
           }}
         >

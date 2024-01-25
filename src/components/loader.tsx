@@ -3,9 +3,6 @@ import React from "react";
 const Loader = () => {
   return (
     <main className="flex gap-4 px-5 mt-5">
-      <div className="fixed left-1/2 top-1/2 w-fit z-10 animate-logo">
-        <img src="/logo.svg" alt="" className="w-20 h-20 object-contain" />
-      </div>
       <aside className="basis-[60%]">
         <div className="h-[374px] w-full bg-gray-400 rounded-[14px] skeleton-loader"></div>
         <div className="mt-5 border border-border bg-gray-200 w-full h-[300px] rounded-[14px] ">
