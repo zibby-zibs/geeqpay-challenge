@@ -7,6 +7,8 @@ import { IoMenuOutline } from "react-icons/io5";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { CiSearch } from "react-icons/ci";
 import Sidebar from "../Sidebar";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import UserModal from "./userModal";
 
 const Header = () => {
   const date = new Date();
@@ -35,19 +37,26 @@ const Header = () => {
             <FaRegBell size={20} />
           </div>
         </div>
-        <div className="flex gap-2 items-center border border-border p-2 rounded-full">
-          <figure>
-            <img
-              src={user?.avatarUrl}
-              alt=""
-              className="w-9 h-9 rounded-full object-contain"
-            />
-          </figure>
-          <article className="hidden xl:block">
-            <h1 className="text-base">{user?.fullName}</h1>
-            <p className="text-gray-400 text-sm">{user?.email}</p>
-          </article>
-        </div>
+        <Popover>
+          <PopoverTrigger>
+            <div className="flex gap-2 items-center border border-border p-2 rounded-full">
+              <figure>
+                <img
+                  src={user?.avatarUrl}
+                  alt=""
+                  className="w-9 h-9 rounded-full object-contain"
+                />
+              </figure>
+              <article className="hidden xl:block">
+                <h1 className="text-base">{user?.fullName}</h1>
+                <p className="text-gray-400 text-sm">{user?.email}</p>
+              </article>
+            </div>
+          </PopoverTrigger>
+          <PopoverContent className="w-full p-0">
+            <UserModal />
+          </PopoverContent>
+        </Popover>
         <div className="xl:hidden">
           <Sheet>
             <SheetTrigger>
