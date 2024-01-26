@@ -1,5 +1,3 @@
-import React from "react";
-
 const Loader = () => {
   return (
     <main className="flex flex-col gap-4 px-5 mt-5">

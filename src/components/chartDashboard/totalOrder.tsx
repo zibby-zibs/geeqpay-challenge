@@ -1,4 +1,3 @@
-import React from "react";
 import { ordersOverTime } from "../../../data/time-series";
 import { Area, ComposedChart, Line, XAxis } from "recharts";
 import { FaArrowTrendUp } from "react-icons/fa6";

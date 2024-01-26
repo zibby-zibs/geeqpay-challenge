@@ -1,4 +1,3 @@
-import React from "react";
 import { refundsOverTime } from "../../../data/time-series";
 import { ComposedChart, Line, XAxis } from "recharts";
 import { FaArrowTrendUp } from "react-icons/fa6";

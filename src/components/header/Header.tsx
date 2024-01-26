@@ -1,5 +1,4 @@
 import dayjs from "dayjs";
-import React from "react";
 import { BiCalendar } from "react-icons/bi";
 import { FaRegBell } from "react-icons/fa6";
 import { user } from "../../../data/user";
