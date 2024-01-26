@@ -24,7 +24,9 @@ const Sidebar = ({ isMobile }: Props) => {
     >
       <aside className="flex flex-col gap-8 items-center">
         <div className="hover:scale-105 duration-300 ease-in-out cursor-pointer">
-          <img src="/logo.svg" alt="" className="w-[40px] h-[40px]" />
+          <a href="/">
+            <img src="/logo.svg" alt="" className="w-[40px] h-[40px]" />
+          </a>
         </div>
         <div className="hover:scale-105 duration-300 ease-in-out cursor-pointer">
           <img src="/category.svg" alt="" className="w-6 h-6" />

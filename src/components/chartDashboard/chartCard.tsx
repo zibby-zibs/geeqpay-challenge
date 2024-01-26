@@ -81,7 +81,10 @@ const ChartCard = () => {
             className="text-[10px] lg:text-[12px]"
           />
           <YAxis className="text-[10px] lg:text-[12px] dark:text-white" />
-          <Tooltip cursor={false} contentStyle={{ fontSize: 13 }} />
+          <Tooltip
+            cursor={false}
+            contentStyle={{ fontSize: 13, color: "black" }}
+          />
 
           <Bar
             activeBar={{ fill: "#34CAA5" }}
