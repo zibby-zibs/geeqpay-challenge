@@ -22,11 +22,11 @@ function App() {
     return () => clearTimeout(timeout);
   }, []);
   return (
-    <main className="relative flex w-full !max-w-[100vw] h-[100dvh] font-jakarta scrollbar-none overflow-x-hidden overflow-y-auto">
+    <main className="relative flex w-full !max-w-[100vw] h-full max-h-[100dvh] font-jakarta scrollbar-none overflow-hidden">
       <div className="z-20 sticky top-0 left-0 hidden xl:block">
         <Sidebar />
       </div>
-      <div className="relative">
+      <div className=" w-full relative max-h-[100dvh] overflow-y-auto overflow-x-hidden scrollbar-none">
         <header className="bg-primary-foreground z-20 sticky top-0 left-0">
           <Header />
         </header>
