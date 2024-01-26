@@ -47,7 +47,7 @@ const Invoice = ({ order }: Props) => {
   };
 
   return (
-    <main className="flex gap-3 py-11" ref={invoiceRef}>
+    <main className="flex gap-3 py-11 dark:text-white" ref={invoiceRef}>
       <figure className="flex flex-col gap-5 items-center border-r border-border px-3">
         <img src="/logo.svg" alt="" className="w-8 h-8 object-contain" />
         <button onClick={downloadPdf}>
@@ -62,7 +62,7 @@ const Invoice = ({ order }: Props) => {
             ) : (
               <h1>Thank you for your purchase!</h1>
             )}
-            <hr className="bg-primary w-[260px] h-[2px] mx-auto rounded-full mt-2" />
+            <hr className="bg-primary dark:bg-[#34CAA5] w-[260px] h-[2px] mx-auto rounded-full mt-2 " />
           </article>
           <div className="max-w-[300px] mx-auto bg-primary-foreground rounded-md p-3 mt-5 flex flex-col gap-4">
             <div className="flex justify-between w-full text-sm">
@@ -107,7 +107,7 @@ const Invoice = ({ order }: Props) => {
                 </div>
               );
             })}
-            <div className="flex justify-between text-sm mt-2">
+            <div className="flex justify-between text-sm mt-2 dark:text-[#34CAA5]">
               <p>Total</p>
               <p className="font-semibold">${order.amount}</p>
             </div>

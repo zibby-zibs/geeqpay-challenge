@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { cn } from "../lib/utils";
 import { useTheme } from "./theme-provider";
+import { MdWbSunny } from "react-icons/md";
 
 type Props = {
   isMobile?: boolean;
 };
 const Sidebar = ({ isMobile }: Props) => {
-  const { setTheme } = useTheme();
+  const { setTheme, theme } = useTheme();
+  const [toggle, setToggle] = useState(false);
+
+  const handleToggle = (key: "light" | "dark") => {
+    setToggle(true);
+    setTheme(key);
+  };
+
   return (
     <main
       className={cn(
@@ -37,17 +45,34 @@ const Sidebar = ({ isMobile }: Props) => {
           <img src="/info-circle.svg" alt="" className="w-6 h-6" />
         </div>
       </aside>
-      <aside className="mt-8 flex flex-col items-center gap-5 bg-white p-3 rounded-full">
+      <aside className="relative mt-8 flex flex-col items-center gap-5 bg-white p-3 rounded-full">
+        <div
+          className={cn(
+            "h-9 w-9 absolute left-3 rounded-full transition-all duration-700 ease-in-out",
+            theme === "light" ? "bg-[#34CAA5]" : "bg-[#282b2b]",
+            // toggle && theme === "light" && "transition -translate-y-[100%]",
+            toggle && theme === "dark"
+              ? "translate-y-[calc(100%+13px)]"
+              : "translate-y-0"
+          )}
+        />
         <button
-          onClick={() => setTheme("light")}
-          className="hover:scale-105 duration-300 ease-in-out cursor-pointer p-2 bg-primary rounded-full"
+          onClick={() => {
+            handleToggle("light");
+          }}
+          className="z-10 hover:scale-105 duration-300 ease-in-out cursor-pointer h-9 w-9 flex items-center justify-center "
         >
-          <img src="/bright.svg" alt="" className="w-6 h-6" />
+          <MdWbSunny
+            size={24}
+            className={cn(theme === "dark" ? "text-[#34CAA5]" : "text-white")}
+          />
         </button>
 
         <button
-          onClick={() => setTheme("dark")}
-          className="hover:scale-105 duration-300 ease-in-out cursor-pointer"
+          onClick={() => {
+            handleToggle("dark");
+          }}
+          className="z-10 hover:scale-105 duration-300 ease-in-out cursor-pointer"
         >
           <img src="/moon.svg" alt="" className="w-6 h-6" />
         </button>
