@@ -35,7 +35,7 @@ const ChartCard = () => {
     }
   };
   return (
-    <main className="relative w-full  border border-border rounded-[0.875rem] bg-white h-[23.375rem] p-5 max-w-full overflow-x-auto overflow-y-hidden scrollbar-none">
+    <main className="relative w-full  border border-border rounded-[0.875rem] bg-white dark:bg-[#282b2b] dark:text-white h-[23.375rem] p-5 max-w-full overflow-x-auto overflow-y-hidden scrollbar-none">
       <article className="sticky top-0 left-0 flex items-center w-full justify-between">
         <h1 className="text-[18px] font-semibold">Sales Trends</h1>
         <div className="flex gap-2 items-center">
@@ -43,7 +43,7 @@ const ChartCard = () => {
           <select
             name=""
             id=""
-            className="p-3 rounded-full border border-border focus:outline-none"
+            className="p-3 rounded-full border border-border dark:border-white focus:outline-none dark:bg-[#282b2b]"
             onChange={handleOrderTime}
           >
             <option value="monthly">Monthly</option>
@@ -54,7 +54,7 @@ const ChartCard = () => {
       <ResponsiveContainer
         height="90%"
         // width={}
-        className={cn("!w-[600px] md:!w-full ")}
+        className={cn("!w-[600px] md:!w-full dark:text-white")}
       >
         <BarChart
           data={data}
@@ -80,7 +80,7 @@ const ChartCard = () => {
             // tick={{ fontSize: 12 }}
             className="text-[10px] lg:text-[12px]"
           />
-          <YAxis className="text-[10px] lg:text-[12px]" />
+          <YAxis className="text-[10px] lg:text-[12px] dark:text-white" />
           <Tooltip cursor={false} contentStyle={{ fontSize: 13 }} />
 
           <Bar

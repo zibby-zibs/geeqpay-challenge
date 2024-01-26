@@ -10,9 +10,9 @@ const TotalRefund = () => {
   ];
 
   return (
-    <main className="bg-white rounded-[14px] p-4 flex flex-col gap-[8px] border border-border">
+    <main className="bg-white dark:bg-[#282b2b] dark:text-white rounded-[14px] p-4 flex flex-col gap-[8px] border border-border dark:border-gray-700">
       <div className="flex items-center justify-between">
-        <figure className="p-2 rounded-full border border-border">
+        <figure className="p-2 rounded-full border border-border dark:border-white">
           <img src="/3d-rotate.svg" alt="" className="w-6 h-6 object-contain" />
         </figure>
 
@@ -66,7 +66,7 @@ const TotalRefund = () => {
           </div>
           <p className="text-[12px]">23.5%</p>
         </div>{" "}
-        <p>VS. previous month</p>
+        <p className="dark:text-white">VS. previous month</p>
       </div>
     </main>
   );

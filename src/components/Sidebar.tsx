@@ -1,10 +1,12 @@
 import React from "react";
 import { cn } from "../lib/utils";
+import { useTheme } from "./theme-provider";
 
 type Props = {
   isMobile?: boolean;
 };
 const Sidebar = ({ isMobile }: Props) => {
+  const { setTheme } = useTheme();
   return (
     <main
       className={cn(
@@ -36,13 +38,19 @@ const Sidebar = ({ isMobile }: Props) => {
         </div>
       </aside>
       <aside className="mt-8 flex flex-col items-center gap-5 bg-white p-3 rounded-full">
-        <div className="hover:scale-105 duration-300 ease-in-out cursor-pointer p-2 bg-primary rounded-full">
+        <button
+          onClick={() => setTheme("light")}
+          className="hover:scale-105 duration-300 ease-in-out cursor-pointer p-2 bg-primary rounded-full"
+        >
           <img src="/bright.svg" alt="" className="w-6 h-6" />
-        </div>
+        </button>
 
-        <div className="hover:scale-105 duration-300 ease-in-out cursor-pointer">
+        <button
+          onClick={() => setTheme("dark")}
+          className="hover:scale-105 duration-300 ease-in-out cursor-pointer"
+        >
           <img src="/moon.svg" alt="" className="w-6 h-6" />
-        </div>
+        </button>
       </aside>
       <aside className="flex flex-col items-center gap-8">
         <div className="hover:scale-105 duration-300 ease-in-out cursor-pointer">
