@@ -6,6 +6,7 @@ import { user } from "../../../data/user";
 import { IoMenuOutline } from "react-icons/io5";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { CiSearch } from "react-icons/ci";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import Sidebar from "../Sidebar";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import UserModal from "./userModal";
@@ -17,7 +18,7 @@ const Header = () => {
       <h1 className="text-[18px]">Dashboard</h1>
       <aside className="flex items-center gap-5">
         <div className="relative max-w-[21.8125rem] hidden xl:block p-2  border border-border rounded-full bg-white">
-          <div className="absolute left-1 top-0 bottom-0 h-fit my-auto w-fit text-gray-300">
+          <div className="absolute left-2 top-0 bottom-0 h-fit my-auto w-fit text-gray-300">
             <CiSearch size={20} />
           </div>
           <input
@@ -39,7 +40,7 @@ const Header = () => {
         </div>
         <Popover>
           <PopoverTrigger>
-            <div className="flex gap-2 items-center border border-border p-2 rounded-full">
+            <div className="group flex gap-2 items-center border border-border p-2 rounded-full">
               <figure>
                 <img
                   src={user?.avatarUrl}
@@ -51,6 +52,9 @@ const Header = () => {
                 <h1 className="text-base">{user?.fullName}</h1>
                 <p className="text-gray-400 text-sm">{user?.email}</p>
               </article>
+              <div className="group-hover:scale-110 duration-100 ease-in">
+                <MdOutlineKeyboardArrowDown size={24} />
+              </div>
             </div>
           </PopoverTrigger>
           <PopoverContent className="w-full p-0">

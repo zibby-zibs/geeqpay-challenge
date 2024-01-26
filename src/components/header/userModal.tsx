@@ -1,5 +1,4 @@
 import React from "react";
-import { user } from "../../../data/user";
 
 const UserModal = () => {
   return (
