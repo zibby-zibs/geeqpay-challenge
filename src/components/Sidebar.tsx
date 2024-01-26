@@ -54,8 +54,9 @@ const Sidebar = ({ isMobile }: Props) => {
             theme === "light" ? "bg-[#34CAA5]" : "bg-[#282b2b]",
             // toggle && theme === "light" && "transition -translate-y-[100%]",
             toggle && theme === "dark"
-              ? "translate-y-[calc(100%+13px)]"
+              ? "translate-y-[calc(100%+20px)]"
               : "translate-y-0"
+            // theme === "dark" ? "bottom-2" : "top-3"
           )}
         />
         <button
@@ -74,7 +75,11 @@ const Sidebar = ({ isMobile }: Props) => {
           onClick={() => {
             handleToggle("dark");
           }}
-          className="z-10 hover:scale-105 duration-300 ease-in-out cursor-pointer"
+          className={cn(
+            "z-10 hover:scale-105 duration-300 ease-in-out cursor-pointer",
+            theme === "dark" &&
+              "h-9 w-9 flex justify-center items-center bg-[#282b2b] rounded-full bg-opacity-100 transition-all duration-700 ease-in"
+          )}
         >
           <img src="/moon.svg" alt="" className="w-6 h-6" />
         </button>
